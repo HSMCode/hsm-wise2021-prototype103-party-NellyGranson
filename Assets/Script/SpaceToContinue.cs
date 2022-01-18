@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System; 
 
 public class SpaceToContinue : MonoBehaviour
 {
@@ -10,7 +11,8 @@ public class SpaceToContinue : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            SceneManager.LoadScene("LevelTwo");
+             int PrevSceneIndex = Int32.Parse(PlayerPrefs.GetString("SceneIndex"));
+             SceneManager.LoadScene(PrevSceneIndex + 1);
         }
     }
 }

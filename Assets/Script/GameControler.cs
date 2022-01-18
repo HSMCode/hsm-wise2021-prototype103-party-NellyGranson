@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameControler : MonoBehaviour
 {
-
+    
     public GameObject lady;
     public GameObject mug;
     public Transform spawnPointLady;
@@ -14,7 +14,7 @@ public class GameControler : MonoBehaviour
     void Start()
     {
         Spawnlady();
-        SpawnMug();
+        SpawnMug(); 
     }
 
     // Update is called once per frame
@@ -25,7 +25,8 @@ public class GameControler : MonoBehaviour
 
     void Spawnlady()
     {
-        Instantiate(lady, spawnPointLady.position, Quaternion.identity);
+        Instantiate(lady, spawnPointLady.position, Quaternion.identity); 
+  
     }
 
     void SpawnMug()
