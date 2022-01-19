@@ -6,7 +6,8 @@ using System;
 
 public class SpaceToContinue : MonoBehaviour
 {
-    // Update is called once per frame
+    // Code defines by USE OF BUILD INDEX NUMBERS which stage to load next.
+    // It is therefore urgendly necessairy to regard the buildIndex when adding new levels to the build settings.
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))

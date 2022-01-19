@@ -7,7 +7,8 @@ using UnityEngine.SceneManagement;
 public class ReloadLevelOnR : MonoBehaviour
 {
 
-    // Update is called once per frame
+    // Defines a game reset. This is primarily a bug fix.
+    // It will always reset to LevelOne rather than resetting an active Scene. 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.R))

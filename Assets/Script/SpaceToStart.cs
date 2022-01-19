@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class SpaceToStart : MonoBehaviour
 {
-    // Update is called once per frame
+    // Script lies on TitleScene. It will load the first level upon pressing space.
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))

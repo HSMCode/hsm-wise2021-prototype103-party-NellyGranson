@@ -4,29 +4,22 @@ using UnityEngine;
 
 public class GameControler : MonoBehaviour
 {
-    
+    // Spawns lady and mug
+    // Is not a randomised script. You have to add textures manually in Unity.
     public GameObject lady;
     public GameObject mug;
     public Transform spawnPointLady;
     public Transform spawnPointMug;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         Spawnlady();
-        SpawnMug(); 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        SpawnMug();
     }
 
     void Spawnlady()
     {
         Instantiate(lady, spawnPointLady.position, Quaternion.identity); 
-  
     }
 
     void SpawnMug()

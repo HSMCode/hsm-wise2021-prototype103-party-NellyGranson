@@ -9,19 +9,22 @@ EditorBuildSettings:
     path: Assets/Scenes/TitleScene.unity
     guid: 96faf840c1e0c4ab1a5fa04d425b69df
   - enabled: 1
-    path: Assets/Scenes/LevelOne/LevelOne.unity
+    path: Assets/Scenes/Levels/LevelOne.unity
     guid: 3123f31eb180344ee943622635ccc351
   - enabled: 1
-    path: Assets/Scenes/LevelTwo/LevelTwo.unity
+    path: Assets/Scenes/Levels/LevelTwo.unity
     guid: 257dbb28b49e94f3587010881392474e
   - enabled: 1
-    path: Assets/Scenes/LevelThree/LevelThree.unity
+    path: Assets/Scenes/Levels/LevelThree.unity
     guid: 84d37e5b2b0324e919887ea5309d8b73
+  - enabled: 1
+    path: Assets/Scenes/Levels/LevelFour.unity
+    guid: 2297ae15331684cb7bce85d8e1808975
   - enabled: 1
     path: Assets/Scenes/StageComplete.unity
     guid: da8a7f6d5340845568e5e26d18b3f4bc
   - enabled: 1
-    path: Assets/Scenes/LevelOne/YouLost.unity
+    path: Assets/Scenes/YouLost.unity
     guid: 7092ddd8652cf43dabc3e54106adb049
   - enabled: 1
     path: Assets/Scenes/GameComplete.unity

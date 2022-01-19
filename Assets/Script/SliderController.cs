@@ -13,11 +13,15 @@ public class SliderController : MonoBehaviour
 
 
     void Start()
-    { 
+    {
+
+        // Makes the value increase fluently
         InvokeRepeating("UpdateProgress", 0.1f, 0.1f);
 
+        // Defines buildIndex
         int buildIndex = SceneManager.GetActiveScene().buildIndex;
 
+        // Indicates release area size of each stage (defines randomBottom, randomTop)
         if (buildIndex == 1)
         {
             randomBottom = Mathf.RoundToInt(Random.Range(0.0f, 0.8f) * 100);
@@ -51,13 +55,16 @@ public class SliderController : MonoBehaviour
     public void UpdateProgress()
 
     {
+
+        // Indicates speed, with which value increases
+        // This can be adapted similarly to lines 25 to 46, if difficulty should be increased with more levels
         if (Input.GetKey(KeyCode.Space))
         {
             Debug.Log("Value is happening");
             progress = progress + 2;
             slider.value = progress;
         }
-        // this is important nelly pls dont forget this pls thanks
+        // Win and lose condition is based on this line. 
         else if (slider.value >= randomBottom && slider.value <= randomTop )  
         {
             
@@ -66,17 +73,23 @@ public class SliderController : MonoBehaviour
 
             int buildIndex = SceneManager.GetActiveScene().buildIndex;
 
+            // This is the very last vicotry screen once the game was finished (after stage 4 for now)
             if (buildIndex == 4)
             {
+                Debug.Log("Victory!");
                 SceneManager.LoadScene("GameComplete");
             }
 
+            // Appears when a level has been completed 
             else
             {
+                Debug.Log("Stage completed!");
                 PlayerPrefs.SetString("SceneIndex", buildIndex.ToString());
                 SceneManager.LoadScene("StageComplete");
             }
         }
+
+        // Appears when level has been lost
         else if (slider.value > 0)
         {
             Debug.Log("You've lost.");
