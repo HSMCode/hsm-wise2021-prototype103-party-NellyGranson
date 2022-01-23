@@ -8,8 +8,11 @@ public class SliderController : MonoBehaviour
 {
     int progress = 0;
     public Slider slider;
+    public RectTransform sliderGreenFillArea;
     int randomBottom;
     int randomTop;
+    private int randomTopGreen;
+    private int randomBottomGreen;
 
 
     void Start()
@@ -45,17 +48,24 @@ public class SliderController : MonoBehaviour
             randomTop = randomBottom + 5;
         }
 
+        // Calculated the GreenSlider bounds according to randomized Top and Bottom values
+        randomTopGreen = (100 - randomTop) * -4; 
+        randomBottomGreen = randomBottom * 4;
+        
+        // Setting the SliderGreen FillArea to calculated bounds
+        // offsetMax Y ==> Rects Top value, can be between 0 (for 100) and -400 (for 0) from the top
+        // offsetMin Y ==> Rects Bottom value, can be between 0 (for 0) and 400 (for 100) from the bottom
+        sliderGreenFillArea.offsetMax = new Vector2(0,randomTopGreen);
+        sliderGreenFillArea.offsetMin = new Vector2(0,randomBottomGreen);
+        
         // Displays Values in Log
-        Debug.Log(randomBottom);
-        Debug.Log(randomTop);
-
+        Debug.Log("Top: " + randomTop + " calculating GREEN TOP: " + randomTopGreen);
+        Debug.Log("Bottom: " + randomBottom + " calculating GREEN BOTTOM: " + randomBottomGreen);
     }
-
-
+    
     public void UpdateProgress()
 
     {
-
         // Indicates speed, with which value increases
         // This can be adapted similarly to lines 25 to 46, if difficulty should be increased with more levels
         if (Input.GetKey(KeyCode.Space))
